@@ -3,7 +3,7 @@
 library(rgl)
 data(iris)
 
-plot3d(iris[, 1:3], type = "s", col = as.numeric(iris$Species), size = 3, alpha = 0.75)# s plot3d rišemo v trirazsežnem prostoru; type je s krogci; prve tri spremenljivke
+plot3d(iris[, 1:3], type = "s", col = as.numeric(iris$Species), size = 3, alpha = 0.75)# s plot3d ri?emo v trirazse?nem prostoru; type je s krogci; prve tri spremenljivke
 
 
 X <- iris[, 1:3]
@@ -26,23 +26,23 @@ b <- c(185,169,173,173,188,186,175,174,179,180)
 
 #Fisherjev F-test
 #preverimo predpostavko o homogenosti varinac (enakost)
-var.test(a,b)#da ugotovimo pri var.equal kakšna je razpršenost
-t.test(a,b, paired = FALSE, var.equal = TRUE)# ali sta razprešenosti dveh vzorcev enaki
-#pogledamo rezultate: p-value je višja od 0,05 zato Ho ne bomo zavrnili = ar.sredini sta med seboj enaki
+var.test(a,b)#da ugotovimo pri var.equal kakÅ¡na je razprÅ¡enost
+t.test(a,b, paired = FALSE, var.equal = TRUE)# ali sta razprÅ¡enosti dveh vzorcev enaki
+#pogledamo rezultate: p-value je viÅ¡ja od 0,05 zato Ho ne bomo zavrnili = ar.sredini sta med seboj enaki
 
 #t-test za 2 neodvisna vzorca #primer 2
 a <- c(175, 168,168, 190, 156, 181, 182, 175, 174, 179)
 b <- c(120, 180, 125, 188, 130, 190, 110, 185, 112, 188)
-var.test(a, b)#p vrednost je zelo majhna; varianca vzorca a je razlièna od vzorca b
-t.test(a, b, paired = FALSE, var.equal = FALSE)# var.equal je zato false ker sta si varianci razlièni
-#komentar: t test je povedal da sta ar.sredini enaki (Ma = Mb); zavrnemo takrat ko je p-value manjša od 0,05
+var.test(a, b)#p vrednost je zelo majhna; varianca vzorca a je razliÄna od vzorca b
+t.test(a, b, paired = FALSE, var.equal = FALSE)# var.equal je zato false ker sta si varianci razli?ni
+#komentar: t test je povedal da sta ar.sredini enaki (Ma = Mb); zavrnemo takrat ko je p-value manj?a od 0,05
 
 
 #t-test za ponovljene meritve
 a <- c(13.9, 13.5, 12.8,15.6,17.2,19.2,12.6,15.3,14.4,11.3)
 b <- c(12.7, 13.6, 12.0, 15.2, 16.8, 20.0, 12.0, 15.9, 16.0,11.1) 
 
-t.test(a, b, paired = TRUE)#sprejmemo Ho; ar.sredine pred in po treningu nista statistièno razlièni..ni bil uèinkovit
+t.test(a, b, paired = TRUE)#sprejmemo Ho; ar.sredine pred in po treningu nista statisti?no razli?ni..ni bil u?inkovit
 
 
 
@@ -53,10 +53,10 @@ c <- c(60,50,65,69,69,57)
 d <- c(62,46,68,72,67,56)
 
 #odvisna spremenljivka
-podatki <- c(a,b,c,d)#združimo podatke
+podatki <- c(a,b,c,d)#zdru?imo podatke
 
 #neodvisna spremenljivka
-skupina <- factor(rep(letters[1:4], each = 6))#letters-angleška abeceda; each-najprej 6 a-jev, nato...; factor-da bo azdeva lepše delala
+skupina <- factor(rep(letters[1:4], each = 6))#letters-angle?ka abeceda; each-najprej 6 a-jev, nato...; factor-da bo azdeva lep?e delala
 
 #Bartlettov test
 bartlett.test(podatki, skupina)
@@ -67,10 +67,10 @@ fit <- lm(formula = podatki ~ skupina)
 
 #pripravimo povzetek anove
 anova(fit)
-#v vrstici:vir razpršenosti   SS    df     MS     F    Pr
+#v vrstici:vir razpr?enosti   SS    df     MS     F    Pr
 #v stolpcu: skupina          8.46   3      2.81   0.03  0.99
 #           ostanki
-#KOMENTAR: ARITMETIÈNE SREDINE V KOLIÈINI PORABLJENE ENERGIJE V POSAMEZNI TRGOVINI MED SEBOJ ENAKE
+#KOMENTAR: ARITMETI?NE SREDINE V KOLI?INI PORABLJENE ENERGIJE V POSAMEZNI TRGOVINI MED SEBOJ ENAKE
 
 #DVOSMERNA ANOVA
 
@@ -79,7 +79,7 @@ mesec <- gl(12,5)#vsak mesec se ponovi 5x
 leto <- gl(5,1, length(dohodki))# na 5 let, 1x se ponovi
 
 #sestavimo linearni model
-fit <- aov(dohodki ~ mesec + leto)# + pomeni dodaj še eno spremenljivko
+fit <- aov(dohodki ~ mesec + leto)# + pomeni dodaj ?e eno spremenljivko
 anova(fit) #naredi povzetek
-#komentar: prihodki se ne razlikujejo ne glede na leto, ne glede na mesec...p veèja od 0,05
+#komentar: prihodki se ne razlikujejo ne glede na leto, ne glede na mesec...p ve?ja od 0,05
 

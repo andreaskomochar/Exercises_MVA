@@ -1,7 +1,5 @@
-setwd("C:/Users/Andreas/Desktop/MVA/Vaje")
-
 #PCA
-#1.Krèenje podatkovne tabele
+#1.KrÄenje podatkovne tabele
 #2.Izdelava nekoleriranih spremenljivk
 #3.Graf.prikaz podatkov
 
@@ -24,20 +22,20 @@ showmatrix(Z)
 #Konstruiramo kvadratno matriko(korelacijsko)
 R <- cor(Z)
 
-#Izraèunamo lastne vrednosti in lastne vektorje
+#Izra?unamo lastne vrednosti in lastne vektorje
 E <- eigen(R)
 str(E) #Struktura E
-lastne.vrednosti <- E$values #Moè posamezne osi v novem prostoru
+lastne.vrednosti <- E$values #Mo? posamezne osi v novem prostoru
 lastni.vektorji <- E$vectors #Definirajo osi novega prostora
 round(lastne.vrednosti,3)
 
-#Koliko glavnih komponent obdrimo:
+#Koliko glavnih komponent obdr?imo:
 #1.Kaiserjev kriterij
 #2.Catellov diagram drobirja(scree plot)
 
 plot(lastne.vrednosti)
 
-#Dele razpršenosti, ki ga pojasni posamezna glavna komponenta
+#DeleÅ¾ razprÅ¡enosti, ki ga pojasni posamezna glavna komponenta
 cumsum(round(lastne.vrednosti / sum(lastne.vrednosti), 3))
 
 n <- 1:5
@@ -77,7 +75,7 @@ principal(r = X, nfactors = 4,rotate = "none")
 pca <- principal(r = X, nfactors = 2,rotate = "none")
 
 str(pca)
-#Izloèimo doseke na prvih dveh komponentah
+#IzloÄimo dose?ke na prvih dveh komponentah
 
 pca1 <- pca$scores
 plot(pca1)

@@ -1,6 +1,6 @@
-# ŠTEVILSKE KARAKTERISTIKE
+# Å TEVILSKE KARAKTERISTIKE
 
-setwd("C:/Users/Andreas/Desktop/MVA/Vaje")
+
 library(stringr)
 library(XML)
 
@@ -9,7 +9,7 @@ url <- "http://lib.stat.cmu.edu/DASL/Datafiles/WildHorses.html"
 html <- readLines(url)
 
 html <- paste(html, collapse = "\n") #pretvori v eno vrstico
-html <- str_extract(html, pattern = "<PRE>.*</PRE>*") #IZRBIŠEMO VSEBINO MED ZNAÄŒKAMA PRE
+html <- str_extract(html, pattern = "<PRE>.*</PRE>*") #IZRBI?EMO VSEBINO MED ZNAÄŒKAMA PRE
 
 html <- gsub("<PRE>\n|\n\n</PRE>", "", html) #ODSTRANI <PRE>
 
@@ -31,7 +31,7 @@ podatki3$Species <- gsub("I\\..", "", podatki3$Species)
   
 write.table(x = podatki3, file = "perunike.txt", col.names = TRUE, row.names = FALSE, quote = FALSE)
 
-#Številske karakteristike
+#?tevilske karakteristike
 #Aritm. sredina
 
 x <- c(10, 8, 4, 7, 1)
@@ -59,7 +59,7 @@ x.sd <- as.vector(sqrt(x.s2))
 x.z <- x.odkloni / x.sd
 
 
-# Še za Y
+# ?e za Y
 y <- c(10, 4, 7, 1, 3)
 n <- length(y)
 e <- rep(1,n)
@@ -83,7 +83,7 @@ x.sredina <- (1/n)* t(e) %*% x
 #Matrika odklonskih vrednosti
 x.odkloni <- x- e %*% x.sredina
 
-#Razpršenosti
+#Razpr?enosti
 x.s2 <- (1/n) * t(x.odkloni) %*% x.odkloni
 x.s2 <- diag(x.s2) #Potrebujemo samo vrednosti na glavni diagonali
 
@@ -94,7 +94,7 @@ s <- diag(x.s)
 #Standardizirani odkloni
 z <- x.odkloni %*% solve(s)
 
-#Kovarianèna matrika
+#Kovarian?na matrika
 
 c <- (1/n) * t(x.odkloni) %*% x.odkloni
 
