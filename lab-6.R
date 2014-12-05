@@ -44,6 +44,7 @@ str_replace_all(string = moj.niz, pattern = "[aeiou]", replacement = "*") #zamen
 moj.niz <- c("jabolko in banana", "marelica in hruška")
 str_split(string = moj.niz, pattern = "in")
 
+<<<<<<< HEAD
 ###########################################################################################
 #Razvrscanje v skupine z podatki iz spletne strani
 library(XML)
@@ -113,6 +114,20 @@ for (i in 1:9)  {
 M  
 sum(M)  
 write.table(M, file = "distance_matrix.csv", sep = ",")
+=======
+#######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 9a836208ab3705e599e6819bf3be63d06d561bf4
 
 
 
