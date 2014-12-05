@@ -90,7 +90,7 @@ table(razbitje)
 #Interpretacija razbitja
 by(data = X, INDICES = razbitje, FUN = colMeans)
 
-#################################################################################
+##################################################################################
 #Večrazsežno lestvičenje - Multidimensional scaling
 library(ggmap)
 library(geosphere)
