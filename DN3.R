@@ -39,13 +39,7 @@ return(J)
 
 }
 
-D <- matrix(data = NA, nrow = 7, ncol = 7)
-for (i in 1:7) {
-  for (j in 1:7) {
-    D[i,j] <- J_razdalja(i,j)
-  
-  }
-}
+
 
 
 
