@@ -40,7 +40,7 @@ moj.niz <- c("eno jabolko", "dve hruški", "tri banane")
 str_replace(string = moj.niz, pattern = "[aeiou]", replacement = "*") #zamenja pri prvi ponovitvi
 str_replace_all(string = moj.niz, pattern = "[aeiou]", replacement = "*") #zamenja vse
 
-#Funkcija str_spli
+#Funkcija str_split
 moj.niz <- c("jabolko in banana", "marelica in hruška")
 str_split(string = moj.niz, pattern = "in")
 
@@ -114,7 +114,7 @@ for (i in 1:9)  {
 M  
 sum(M)  
 write.table(M, file = "distance_matrix.csv", sep = ",")
-=======
+
 #######################################################################################
 
 
