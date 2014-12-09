@@ -35,15 +35,14 @@ J_razdalja <- function(x,y) {
 
 J <- (M01+M10)/(M01+M10+M11)
 
-
-
 return(J)
+
 }
 
-M <- matrix(data = NA, nrow = 7, ncol = 7)
+D <- matrix(data = NA, nrow = 7, ncol = 7)
 for (i in 1:7) {
   for (j in 1:7) {
-    M[i,j] <- J_razdalja(i,j)
+    D[i,j] <- J_razdalja(i,j)
   
   }
 }
